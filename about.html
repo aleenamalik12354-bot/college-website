@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <title>F.G Post Graduate College for Women</title>
+
+  <style>
+    :root {
+      --darkGreen:#003B2E;
+      --leafGreen:#1E5631;
+      --cream:#F5F3E7;
+      --gold:#D7C9AA;
+      --char:#222;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      background: var(--cream);
+    }
+
+    /* Navbar */
+    .navbar {
+      background: linear-gradient(90deg,var(--darkGreen),var(--leafGreen)) !important;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      transition: all 0.3s;
+    }
+
+    .navbar.scrolled {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--cream);
+      padding: 8px 16px;
+      border-radius: 10px;
+      border: 3px solid var(--gold);
+      transition: transform 0.3s;
+    }
+
+    .navbar-brand:hover {
+      transform: scale(1.05);
+    }
+
+    .navbar-brand img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .navbar-brand span {
+      font-weight: 800;
+      color: var(--darkGreen);
+      font-size: 1.1rem;
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      font-weight: 600;
+      margin: 0 10px;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .navbar-nav .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: -5px;
+      left: 50%;
+      background: var(--gold);
+      transition: all 0.3s;
+      transform: translateX(-50%);
+    }
+
+    .navbar-nav .nav-link:hover:after {
+      width: 100%;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--gold) !important;
+      transform: translateY(-2px);
+    }
+
+    /* Parallax Hero */
+    .parallax-hero {
+      height: 100vh;
+      background-image: url('\hi.jpeg');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .parallax-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0,59,46,0.92), rgba(30,86,49,0.85));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 20px;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+    }
+
+    .hero-content p {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--darkGreen);
+      padding: 15px 40px;
+      border-radius: 50px;
+      font-weight: 800;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+      background: #e6d89d;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--darkGreen);
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 4px;
+      background: var(--gold);
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Course Cards with Hover */
+    .course-card {
+      height: 280px;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+    }
+
+    .course-card:hover {
+      transform: translateY(-15px) scale(1.03);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+
+    .course-bg {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      text-align: center;
+      padding: 30px;
+      transition: all 0.4s;
+    }
+
+    .course-card:hover .course-bg {
+      transform: scale(1.1);
+      opacity: 0.3;
+    }
+
+    .course-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      color: #fff;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .course-card:hover .course-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .course-overlay h5 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: var(--gold);
+    }
+
+    .course-overlay ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .course-overlay li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      transition: all 0.3s;
+    }
+
+    .course-overlay li:hover {
+      padding-left: 10px;
+      color: var(--gold);
+    }
+
+    .c1 .course-bg{background:linear-gradient(135deg,#2F6B4E,#1a4d36)}
+    .c2 .course-bg{background:linear-gradient(135deg,#3E8A59,#2a6d45)}
+    .c3 .course-bg{background:linear-gradient(135deg,#5FA676,#4a8f62)}
+    .c4 .course-bg{background:linear-gradient(135deg,#8FBF8E,#72a671)}
+    .c5 .course-bg{background:linear-gradient(135deg,#CDE9C9,#b5d6b2)}
+
+    /* Info Cards */
+    .info-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      border-left: 5px solid var(--leafGreen);
+    }
+
+    .info-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      border-left-color: var(--gold);
+    }
+
+    .info-card h3 {
+      color: var(--darkGreen);
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    /* Result Section */
+    .result-section {
+      background: linear-gradient(135deg, rgba(30,86,49,0.05), rgba(0,59,46,0.05));
+      border-radius: 20px;
+      padding: 50px;
+    }
+
+    .form-control, .form-select {
+      border-radius: 10px;
+      padding: 12px;
+      border: 2px solid #ddd;
+      transition: all 0.3s;
+    }
+
+    .form-control:focus, .form-select:focus {
+      border-color: var(--leafGreen);
+      box-shadow: 0 0 15px rgba(30,86,49,0.2);
+    }
+
+    .btn-check-result {
+      background: linear-gradient(135deg, var(--leafGreen), var(--darkGreen));
+      color: #fff;
+      border: none;
+      padding: 15px;
+      border-radius: 10px;
+      font-weight: 800;
+      transition: all 0.3s;
+    }
+
+    .btn-check-result:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(30,86,49,0.4);
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, var(--darkGreen), var(--leafGreen));
+      color: #fff;
+      text-align: center;
+      padding: 30px;
+      margin-top: 80px;
+    }
+
+    /* Scroll Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media(max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+      .parallax-hero {
+        background-attachment: scroll;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#home">
+      <img src="\logo.jpeg" alt="Logo">
+      <span>F.G Post Graduate College</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="#result">Result</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Parallax Hero -->
+<section id="home" class="parallax-hero">
+  <div class="parallax-overlay"></div>
+  <div class="hero-content">
+    <h1>F.G Post Graduate College for Women</h1>
+    <p>Wah Cantt - Affiliated with University of The Punjab</p>
+    <a href="#courses" class="cta-btn">Explore Programs</a>
+  </div>
+</section>
+
+<!-- Courses Section -->
+<section id="courses" class="fade-in">
+  <div class="container">
+    <h2 class="section-title">Our Programs</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="course-card c1">
+          <div class="course-bg">BS Botany</div>
+          <div class="course-overlay">
+            <h5>BS Botany</h5>
+            <ul>
+              <li>Plant Diversity & Taxonomy</li>
+              <li>Plant Physiology</li>
+              <li>Cell Biology & Genetics</li>
+              <li>Ecology & Environmental Science</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="course-card c2">
+          <div class="course-bg">BS Information Technology</div>
+          <div class="course-overlay">
+            <h5>BS Information Technology</h5>
+            <ul>
+              <li>Programming & Databases</li>
+              <li>Networking & Security</li>
+              <li>Software Engineering</li>
+              <li>Web & App Development</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="course-card c3">
+          <div class="course-bg">BS Mathematics</div>
+          <div class="course-overlay">
+            <h5>BS Mathematics</h5>
+            <ul>
+              <li>Calculus & Analysis</li>
+              <li>Linear Algebra</li>
+              <li>Probability & Statistics</li>
+              <li>Differential Equations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="course-card c4">
+          <div class="course-bg">BS English</div>
+          <div class="course-overlay">
+            <h5>BS English</h5>
+            <ul>
+              <li>English Literature</li>
+              <li>Linguistics & Phonetics</li>
+              <li>Creative Writing</li>
+              <li>Literary Criticism</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="course-card c5">
+          <div class="course-bg" style="color:#222">BS Psychology</div>
+          <div class="course-overlay">
+            <h5>BS Psychology</h5>
+            <ul>
+              <li>Clinical Psychology</li>
+              <li>Social Psychology</li>
+              <li>Cognitive Psychology</li>
+              <li>Developmental Psychology</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Result Section -->
+<section id="result" class="fade-in">
+  <div class="container">
+    <div class="result-section">
+      <h2 class="section-title">Check Your Result</h2>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <input type="text" id="stuName" class="form-control" placeholder="Student Name">
+        </div>
+        <div class="col-md-6">
+          <input type="text" id="roll" class="form-control" placeholder="Roll Number">
+        </div>
+        <div class="col-12">
+          <select id="program" class="form-select">
+            <option value="">Select Program</option>
+            <option>BS Information Technology</option>
+            <option>BS Botany</option>
+            <option>BS Mathematics</option>
+            <option>BS English</option>
+            <option>BS Psychology</option>
+          </select>
+        </div>
+        <div class="col-12">
+          <button id="checkBtn" class="btn btn-check-result w-100">Check Result</button>
+          <div id="resultMessage" class="mt-3 fw-bold text-success text-center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="fade-in">
+  <div class="container">
+    <div class="info-card">
+      <h3>About Us</h3>
+      <p>F.G Post Graduate College for Women, Wah Cantt provides quality higher education to women with a focus on academic excellence, research and co-curricular development. Affiliated with the University of the Punjab, Lahore, we are committed to empowering young women through education and preparing them for successful careers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="fade-in">
+  <div class="container">
+    <div class="info-card">
+      <h3>Contact Us</h3>
+      <p><strong>Phone:</strong> (051) 9314313</p>
+      <p><strong>Email:</strong> fg.pgc.wah@gmail.com</p>
+      <p><strong>Address:</strong> Aslam Market, Quaid Ave, Wah Cantt</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>© <span id="year"></span> F.G Post Graduate College for Women, Wah Cantt. All Rights Reserved.</p>
+</footer>
+
+<script>
+// Set current year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar');
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// Scroll animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Result checker
+document.getElementById('checkBtn').addEventListener('click', () => {
+  const name = document.getElementById('stuName').value.trim();
+  const roll = document.getElementById('roll').value.trim();
+  const prog = document.getElementById('program').value;
+  const msg = document.getElementById('resultMessage');
+  
+  if (!name || !roll || !prog) {
+    alert('Please fill all fields');
+    return;
+  }
+  
+  msg.textContent = `Result for ${name} (${roll}) - ${prog}: RESULT NOT AVAILABLE`;
+});
+
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>

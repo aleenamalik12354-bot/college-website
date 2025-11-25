@@ -1,0 +1,46 @@
+/* Simple responsive CSS */
+:root{
+  --primary:#162447;
+  --accent:#1f4068;
+  --pink:#e43f5a;
+  --muted:#f4f4f4;
+  --container:1100px;
+}
+*{box-sizing:border-box}
+body{font-family:Arial, Helvetica, sans-serif;margin:0;background:var(--muted);color:#222}
+.container{max-width:var(--container);margin:0 auto;padding:20px}
+.header-inner{display:flex;align-items:center;gap:20px;padding:12px 0}
+.logo{width:80px;height:80px;object-fit:cover;border-radius:8px;background:#fff;padding:6px}
+.header-text h1{margin:0;font-size:20px}
+.header-text p{margin:2px 0 0;font-size:14px;color:#ddd}
+.main-nav{background:var(--accent)}
+.main-nav .container{display:flex;gap:16px;align-items:center}
+.nav-link{color:#fff;padding:12px 10px;text-decoration:none;display:inline-block}
+.nav-link:hover,.nav-link.active{background:rgba(0,0,0,0.12)}
+.hero{height:360px;overflow:hidden}
+.hero-slider{height:100%}
+.slide{height:360px;background-size:cover;background-position:center;display:flex;align-items:center}
+.slide-caption{background:rgba(0,0,0,0.35);color:#fff;padding:20px;border-radius:6px;margin-left:40px;max-width:480px}
+.btn{display:inline-block;background:var(--pink);color:#fff;padding:10px 16px;border-radius:5px;text-decoration:none;border:none;cursor:pointer}
+.btn.small{padding:6px 10px;font-size:14px}
+.intro{padding:40px 20px;text-align:left}
+.quick{display:flex;gap:20px;padding:20px 0}
+.card{background:#fff;padding:20px;border-radius:6px;flex:1;box-shadow:0 1px 6px rgba(0,0,0,0.08)}
+.about-top{display:flex;gap:20px;align-items:center;padding:20px 0}
+.about-img{width:45%;max-width:480px;border-radius:6px}
+.courses-table{width:100%;border-collapse:collapse;background:#fff;border-radius:6px;overflow:hidden}
+.courses-table th, .courses-table td{padding:12px;border-bottom:1px solid #eee;text-align:left}
+.faculty-list{list-style:none;padding:0}
+.faculty-list li{background:#fff;padding:12px;margin-bottom:8px;border-radius:6px}
+.result-form{display:flex;gap:10px;align-items:center;margin:20px 0}
+.result-form input{padding:10px;border-radius:5px;border:1px solid #ccc;flex:1}
+.result-area{background:#fff;padding:20px;border-radius:6px;min-height:80px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.site-footer{background:#162447;color:#fff;padding:18px}
+@media (max-width:800px){
+  .header-inner{flex-direction:column;align-items:flex-start}
+  .about-top{flex-direction:column}
+  .contact-grid{grid-template-columns:1fr}
+  .main-nav .container{flex-wrap:wrap}
+  .quick{flex-direction:column}
+}
