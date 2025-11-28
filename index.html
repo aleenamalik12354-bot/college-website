@@ -1,0 +1,356 @@
+<!--
+  FG Post Graduate College for Women - Single page website (index.html)
+  - Combined HTML + CSS + JS
+  - Place college hero image at images/college-front.jpg
+  - Font: Poppins from Google Fonts (included)
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>F.G Post Graduate College for Women</title>
+
+  <!-- Google Font: Playfair Display (Headings) & Inter (Body) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-p1Cm7rV1V8b6l0x0U4x3q6Tqf8q3xJm2QfZb7Gq6s4k3bQ9k8d2X8rG5z6y1y8Z3W9Vgq1j2Z3a4b5c6d7e8g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Header / Nav (Bootstrap) -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid" style="max-width: 1200px;">
+      <a class="navbar-brand" href="#">
+        <img src="images/logo.jpeg" alt="Logo">
+        <span>F.G Post Graduate College for Women, Wah Cantt</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="#results">Results</a></li>
+          <li class="nav-item"><a class="nav-link" href="#admission">Admission</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero" aria-label="College hero">
+    <div class="hero-content">
+      <h1>Welcome to F.G Post Graduate College for Women</h1>
+      <p>Empowering Students, Building Futures</p>
+      <a class="btn-hero" href="#courses">Explore Courses</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="container mt-5">
+    <div class="about-section text-center">
+      <h2 class="section-title">About Us</h2>
+      <p style="max-width:900px;margin:0 auto;color:#555;font-size:1.1rem;">
+        F.G Post Graduate College is committed to providing quality education and fostering excellence in learning.
+        With experienced faculty and modern facilities, we prepare students for successful careers and meaningful lives.
+        Our mission is to create a supportive learning environment where every student can reach their full potential.
+      </p>
+    </div>
+  </section>
+
+  <!-- COLLEGE OVERVIEW -->
+  <section id="overview" class="container mt-5">
+    <h2 class="section-title">College Overview</h2>
+    <div class="row align-items-center g-4 overview-section">
+      <div class="col-lg-6">
+        <img src="images/inst_6849136172b872.53526253.jpg" alt="College Campus" class="overview-img w-100">
+      </div>
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm p-4">
+          <h3 class="mb-3" style="font-family: var(--font-heading); color: var(--primary);">F.G Post Graduate College
+            for Women, Wah Cantt</h3>
+          <p style="color:#555;font-size:1.05rem;">
+            Established to empower women through higher education, the college offers BS programs across sciences,
+            social sciences and humanities.
+            Located in Wah Cantt, the campus provides a safe, inclusive environment with modern classrooms, computer
+            labs, a well-stocked library,
+            and active student societies. Academic excellence is supported by experienced faculty, merit-based
+            admissions and continuous mentoring.
+          </p>
+          <ul class="list-unstyled mb-3" style="color:#444;">
+            <li><i class="fa fa-check text-success me-2"></i>Affiliation: University of the Punjab (BS Programs)</li>
+            <li><i class="fa fa-check text-success me-2"></i>Facilities: Library, IT Labs, Science Labs, Sports,
+              Cafeteria</li>
+            <li><i class="fa fa-check text-success me-2"></i>Focus: Character building, research skills and community
+              engagement</li>
+          </ul>
+          <a href="#admission" class="btn btn-outline-primary fw-semibold">View Admission Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section id="courses" class="container mt-5">
+    <h2 class="section-title">Our Programs</h2>
+    <div class="row g-4" id="courseGrid">
+      <!-- Course cards injected by JS -->
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results" class="container mt-5">
+    <h2 class="section-title">Examination Results</h2>
+    <div class="row g-4">
+      <!-- Check Result Form -->
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm p-4 h-100" style="border-top: 4px solid var(--accent);">
+          <h3 class="mb-4"><i class="fa fa-search me-2 text-primary"></i>Check Online Result</h3>
+          <form id="resultForm">
+            <div class="mb-3">
+              <label class="form-label fw-bold">Select Class / Program</label>
+              <select class="form-select" id="resultClass" required>
+                <option value="">-- Select Class --</option>
+                <option value="BSCS-1">BS Computer Science (Sem 1)</option>
+                <option value="BSCS-2">BS Computer Science (Sem 2)</option>
+                <option value="BSENG-1">BS English (Sem 1)</option>
+                <option value="BSPSY-1">BS Psychology (Sem 1)</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-bold">Enter Roll Number</label>
+              <input type="text" class="form-control" id="resultRollNo" placeholder="e.g. 12345" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 fw-bold">View Result</button>
+          </form>
+          <div id="resultOutput" class="mt-3" style="display:none;"></div>
+        </div>
+      </div>
+
+      <!-- Latest Announcements -->
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm p-4 h-100 bg-light">
+          <h3 class="mb-4"><i class="fa fa-bullhorn me-2 text-warning"></i>Latest Announcements</h3>
+          <ul class="list-group list-group-flush bg-transparent">
+            <li class="list-group-item bg-transparent d-flex justify-content-between align-items-center">
+              <span><i class="fa fa-file-alt text-muted me-2"></i>BSCS 4th Semester Result Declared</span>
+              <span class="badge bg-danger rounded-pill">New</span>
+            </li>
+            <li class="list-group-item bg-transparent d-flex justify-content-between align-items-center">
+              <span><i class="fa fa-file-alt text-muted me-2"></i>BS English Mid-Term Date Sheet</span>
+              <span class="badge bg-primary rounded-pill">Info</span>
+            </li>
+            <li class="list-group-item bg-transparent d-flex justify-content-between align-items-center">
+              <span><i class="fa fa-file-alt text-muted me-2"></i>Supplementary Exam Schedule 2025</span>
+              <span class="badge bg-secondary rounded-pill">Archived</span>
+            </li>
+            <li class="list-group-item bg-transparent d-flex justify-content-between align-items-center">
+              <span><i class="fa fa-file-alt text-muted me-2"></i>Merit List Fall 2024</span>
+              <span class="badge bg-secondary rounded-pill">Archived</span>
+            </li>
+          </ul>
+          <div class="mt-4 text-center">
+            <a href="#" class="btn btn-outline-dark btn-sm">View All Notifications</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMISSION -->
+  <section id="admission" class="container mt-5">
+    <h2 class="section-title">Admission Criteria & Eligibility</h2>
+    <div class="admission-card">
+      <p class="text-center mb-4">
+        <strong>General eligibility for all BS programs:</strong> Candidates must have passed Intermediate (FA/FSc/ICS)
+        or equivalent
+        from a recognized board with a minimum of <strong>45% marks</strong> (as per University of the Punjab BS
+        admission rules).
+        Admissions are granted on merit. Applicants with O/A Levels must provide an equivalence certificate.
+      </p>
+
+      <div class="text-center">
+        <button class="apply-btn" id="applyNowBtn">Apply Now</button>
+      </div>
+
+      <!-- Hidden Admission Form -->
+      <div id="admissionForm"
+        style="display:none; margin-top:30px; max-width:600px; margin-left:auto; margin-right:auto;">
+        <div class="card p-4 border-0 shadow-sm bg-light">
+          <h3 class="text-center mb-4">Student Admission Form</h3>
+          <form id="studentForm">
+            <div class="mb-3">
+              <label class="form-label fw-bold text-primary">Full Name</label>
+              <input type="text" name="name" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-bold text-primary">Roll Number</label>
+              <input type="text" name="rollno" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-bold text-primary">Email</label>
+              <input type="email" name="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-bold text-primary">Select Course</label>
+              <select name="course" class="form-select" required>
+                <option value="">-- Select Course --</option>
+                <option value="BS Computer Science">BS Computer Science</option>
+                <option value="BS English">BS English</option>
+                <option value="BS Psychology">BS Psychology</option>
+                <option value="BS Mathematics">BS Mathematics</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-success w-100 py-2 fw-bold">Submit Application</button>
+          </form>
+          <div id="formMessage" class="mt-3 text-center text-success fw-bold"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="container mt-5 mb-5">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="contact-card">
+          <h4>Address</h4>
+          <p>Aslam Market, Quaid Ave, Wah Cantt</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="contact-card">
+          <h4>Phone</h4>
+          <p>(051) 9314313</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="contact-card">
+          <h4>Email</h4>
+          <p>fg.pgc.wah@gmail.com</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="contact-card">
+          <h4>Office Hours</h4>
+          <p>Mon - Fri: 9:00 AM - 2:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="punjab-uni" class="container mt-5">
+    <h2 class="section-title">University of the Punjab, Lahore</h2>
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <img src="images/punjab uni.jpeg" alt="University of the Punjab Lahore" class="overview-img w-100">
+      </div>
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm p-4">
+          <h3 style="font-family: var(--font-heading); color: var(--primary);" class="mb-3">About University of the
+            Punjab</h3>
+          <p style="color:#555;font-size:1.05rem;">
+            University of the Punjab (PU) Lahore is one of Pakistan’s oldest and most prestigious public universities.
+            It offers a wide range of undergraduate and postgraduate programs, strong research culture, and vibrant
+            campus life.
+            F.G Post Graduate College for Women, Wah Cantt operates BS programs affiliated with PU, following PU’s
+            academic standards.
+          </p>
+          <ul class="list-unstyled mb-3" style="color:#444;">
+            <li><i class="fa fa-check text-success me-2"></i>Public University with extensive faculties and departments
+            </li>
+            <li><i class="fa fa-check text-success me-2"></i>Quality assurance, examinations and curriculum oversight
+            </li>
+            <li><i class="fa fa-check text-success me-2"></i>Strong alumni network and industry linkages</li>
+          </ul>
+          <a href="https://www.facebook.com/UniversityOfThePunjab.Official/photos/" target="_blank" rel="noopener"
+            class="btn btn-outline-primary fw-semibold">View PU Photo Gallery</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (Bootstrap) -->
+  <footer class="bg-dark text-white mt-5">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5 class="mb-3">About College</h5>
+          <p class="text-white-50">F.G Post Graduate College for Women, Wah Cantt — delivering quality education with
+            modern facilities and dedicated faculty.</p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="mb-3">Quick Links</h5>
+          <ul class="list-unstyled text-white-50">
+            <li><a href="#home" class="text-white-50 text-decoration-none">Home</a></li>
+            <li><a href="#overview" class="text-white-50 text-decoration-none">College Overview</a></li>
+            <li><a href="#courses" class="text-white-50 text-decoration-none">Programs</a></li>
+            <li><a href="#admission" class="text-white-50 text-decoration-none">Admission</a></li>
+            <li><a href="#contact" class="text-white-50 text-decoration-none">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5 class="mb-3">Contact</h5>
+          <p class="mb-1 text-white-50">Aslam Market, Quaid Ave, Wah Cantt</p>
+          <p class="mb-1 text-white-50">Phone: (051) 9314313</p>
+          <p class="mb-3 text-white-50">Email: fg.pgc.wah@gmail.com</p>
+          <div>
+            <a href="#" class="text-white-50 me-3"><i class="fa-brands fa-facebook fa-lg"></i></a>
+            <a href="#" class="text-white-50 me-3"><i class="fa-brands fa-twitter fa-lg"></i></a>
+            <a href="#" class="text-white-50"><i class="fa-brands fa-instagram fa-lg"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-secondary my-4" />
+      <div class="d-flex justify-content-between align-items-center">
+        <p class="mb-0 text-white-50">&copy; 2025 F.G Post Graduate College for Women, Wah Cantt</p>
+        <a href="#home" class="btn btn-sm btn-outline-light">Back to Top</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal overlay -->
+  <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+      <div class="modal-header-custom">
+        <i id="modalIcon" style="font-size:24px;color:var(--accent)"></i>
+        <h3 id="modalTitle" style="margin:0;font-size:1.5rem;">Subject Title</h3>
+      </div>
+      <div class="modal-body-custom" id="modalBody">
+        <p>Subject description...</p>
+      </div>
+      <div style="padding:15px 30px;background:#f8f9fa;font-size:0.85rem;color:#666;border-top:1px solid #eee;">
+        Summarised from Punjab University Lahore syllabus outline.
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll to top -->
+  <button id="scrollTopBtn"
+    style="position:fixed;right:20px;bottom:20px;background:var(--accent);color:#fff;border:0;width:50px;height:50px;border-radius:50%;font-size:20px;display:none;cursor:pointer;z-index:1050;box-shadow:0 4px 10px rgba(0,0,0,0.2);">↑</button>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
