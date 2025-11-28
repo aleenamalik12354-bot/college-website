@@ -24,7 +24,7 @@ Single‑page, responsive website for F.G Post Graduate College for Women (Wah C
 - `images/` — logo and imagery (including `punjab uni.jpeg`)
 
 ## Run Locally
-- Simply open `college.html` in your browser.
+- Simply open `index.html` in your browser.
 
 ## Customize
 - Programs: edit the `courses` array in `script.js`
